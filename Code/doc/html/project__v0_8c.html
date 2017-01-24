@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Projet de système d&#39;exploitation 2 : trions ensembles: Référence du fichier src/project_v0.c</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Projet de système d&#39;exploitation 2 : trions ensembles
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sujet</span></a></li>
+      <li><a href="globals.html"><span>Fonctions</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier src/project_v0.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementation of the V0 of the system project.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="project__v0_8h_source.html">project_v0.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe7e2f6b38d06012b78aa8f89ed2a89f"></a><!-- doxytag: member="project_v0.c::PROJECT_FILENAME_MAX_SIZE" ref="abe7e2f6b38d06012b78aa8f89ed2a89f" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__v0_8c.html#abe7e2f6b38d06012b78aa8f89ed2a89f">PROJECT_FILENAME_MAX_SIZE</a>&#160;&#160;&#160;1024</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length (in character) for a file name. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2af1d12214486f95ce2b42de3a1f9e5"></a><!-- doxytag: member="project_v0.c::SORTALGO" ref="ac2af1d12214486f95ce2b42de3a1f9e5" args="(nb_elem, values)" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__v0_8c.html#ac2af1d12214486f95ce2b42de3a1f9e5">SORTALGO</a>(nb_elem, values)&#160;&#160;&#160;<a class="el" href="system__utils_8h.html#a0f0a5dd981390dcdbfd62f697eeeda85">SU_QSort</a>(nb_elem, values)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the sort algorithm used in this version. <br/></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__v0_8c.html#a6d56b61b2c97351ab6c4e6c5f8e2560b">projectV0</a> (const char *i_file, const char *o_file, unsigned long nb_split)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sort a file using an external sort and nb_split subfiles.  <a href="#a6d56b61b2c97351ab6c4e6c5f8e2560b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__v0_8c.html#a33dd1f15463ff12ea1b24bcbadd62264">projectV0_sortFiles</a> (unsigned long nb_split, const char **filenames, const char **filenames_sort)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sort a temporary subfile and remove it.  <a href="#a33dd1f15463ff12ea1b24bcbadd62264"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__v0_8c.html#a581ea5ef81c79e6ec26dd0375f3de408">projectV0_combMerge</a> (unsigned long nb_split, const char **filenames_sort, const char *o_file)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to sort-merge a list of sorted subfiles.  <a href="#a581ea5ef81c79e6ec26dd0375f3de408"></a><br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Implementation of the V0 of the system project. </p>
+<dl class="warning"><dt><b>Avertissement:</b></dt><dd>You should not modifie the current file. </dd></dl>
+</div><hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a6d56b61b2c97351ab6c4e6c5f8e2560b"></a><!-- doxytag: member="project_v0.c::projectV0" ref="a6d56b61b2c97351ab6c4e6c5f8e2560b" args="(const char *i_file, const char *o_file, unsigned long nb_split)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="project__v0_8h.html#a6d56b61b2c97351ab6c4e6c5f8e2560b">projectV0</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>i_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>o_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_split</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to sort a file using an external sort and nb_split subfiles. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i_file</td><td>Name of the file to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">o_file</td><td>Name of the output sorted file. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_split</td><td>Number of subfiles to use for the external sort. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>No parallelisme. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a581ea5ef81c79e6ec26dd0375f3de408"></a><!-- doxytag: member="project_v0.c::projectV0_combMerge" ref="a581ea5ef81c79e6ec26dd0375f3de408" args="(unsigned long nb_split, const char **filenames_sort, const char *o_file)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="project__v0_8h.html#a581ea5ef81c79e6ec26dd0375f3de408">projectV0_combMerge</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_split</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>filenames_sort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>o_file</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to sort-merge a list of sorted subfiles. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_split</td><td>Index of the subfile in the array of files. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenames_sort</td><td>Array of sorted file names. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">o_file</td><td>Nome of the output file where sorted data are written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>It work in stream. Files are not fully loaded in memory. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a33dd1f15463ff12ea1b24bcbadd62264"></a><!-- doxytag: member="project_v0.c::projectV0_sortFiles" ref="a33dd1f15463ff12ea1b24bcbadd62264" args="(unsigned long nb_split, const char **filenames, const char **filenames_sort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="project__v0_8h.html#a33dd1f15463ff12ea1b24bcbadd62264">projectV0_sortFiles</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_split</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>filenames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>filenames_sort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Function to sort a temporary subfile and remove it. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_split</td><td>Index of the subfile in the array of files. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenames</td><td>Array of file to sort names. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filenames_sort</td><td>Array of sorted file names. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Mars 27 2016 17:07:30 pour Projet de système d'exploitation 2 : trions ensembles par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

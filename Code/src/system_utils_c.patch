@@ -1,0 +1,14 @@
+575,576c575,582
+<     for (j = i; j > 0 && data[j] > value; j--){
+<       data[j] = data[j - 1];
+---
+>     for (j = i-1; j > 0 && data[j] > value; j--){
+>       data[j+1] = data[j];      
+>     }
+>     if(j == 0 && data[j] > value){
+>       data[j] = value;
+>     } 
+>     else{
+>       data[j+1] = value;
+578d583
+<     data[j + 1] = value;

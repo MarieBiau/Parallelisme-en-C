@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Projet de système d&#39;exploitation 2 : trions ensembles:  Fichier source de src/system_utils.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Projet de système d&#39;exploitation 2 : trions ensembles
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sujet</span></a></li>
+      <li><a href="globals.html"><span>Fonctions</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">src/system_utils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="system__utils_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00007"></a>00007 <span class="preprocessor">#ifndef SYSTEM_UTILS_H</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="preprocessor">#define SYSTEM_UTILS_H</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span>
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;sys/types.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;sys/stat.h&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;sys/wait.h&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;fcntl.h&gt;</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;unistd.h&gt;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;stdarg.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;err.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &lt;sysexits.h&gt;</span>
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;assert.h&gt;</span>
+<a name="l00028"></a>00028 
+<a name="l00035"></a>00035 <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="system__utils_8c.html#a3a7d856af4c621514ac10a02646b2740" title="Get the number of line of a file.">SU_getFileNbLine</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * file);
+<a name="l00036"></a>00036 
+<a name="l00045"></a>00045 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a9df7559e336ff98354b7af71a1e75d80" title="Split a file in sub files.">SU_splitFile</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * source_file, 
+<a name="l00046"></a>00046            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nb_line_per_file,
+<a name="l00047"></a>00047            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nb_files,
+<a name="l00048"></a>00048            <span class="keyword">const</span> <span class="keywordtype">char</span> * source_file1, 
+<a name="l00049"></a>00049            ... );
+<a name="l00050"></a>00050 
+<a name="l00058"></a>00058 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a773e64d16aaffa7a8466308c0537bba0" title="Split a file in sub files.">SU_splitFile2</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> * source_file,
+<a name="l00059"></a>00059             <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nb_line_per_file,
+<a name="l00060"></a>00060             <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nb_files,
+<a name="l00061"></a>00061             <span class="keyword">const</span> <span class="keywordtype">char</span> ** file_names);
+<a name="l00062"></a>00062 
+<a name="l00070"></a>00070 <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="system__utils_8c.html#a5cff693748ce864e7db51bc28e38982d" title="Load a file of integer (one per line).">SU_loadFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * file, <span class="keywordtype">int</span> ** data);
+<a name="l00071"></a>00071 
+<a name="l00078"></a>00078 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a2929af5c8c7975dab2163c3c633c4656" title="Load a file of integer (one per line).">SU_saveFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * file, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data_size, <span class="keyword">const</span> <span class="keywordtype">int</span> * data);
+<a name="l00079"></a>00079 
+<a name="l00085"></a>00085 <span class="keywordtype">void</span> <a class="code" href="system__utils_8h.html#a31b12abd418b33f929a1b85a20e1d375" title="Remove a file from filesystem.">SU_removeFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * file);
+<a name="l00086"></a>00086 
+<a name="l00092"></a>00092 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a273efdb8e0af1dff499d05b8e302e01a" title="fill a file with nb_elems random integers">SU_randomGeneration</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * file_target, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> nb_elems);
+<a name="l00093"></a>00093 
+<a name="l00101"></a>00101 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a411a08d168c62b858bfe9067a81b2913" title="Merge two sorted files of integers.">SU_mergeSortedFiles</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> * source_file1,
+<a name="l00102"></a>00102              <span class="keyword">const</span> <span class="keywordtype">char</span> * source_file2, 
+<a name="l00103"></a>00103              <span class="keyword">const</span> <span class="keywordtype">char</span> * file_target);
+<a name="l00104"></a>00104 
+<a name="l00111"></a>00111 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a0f0a5dd981390dcdbfd62f697eeeda85" title="Sort of an array of integer with Quick Sort algorithm.">SU_QSort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data_size, <span class="keywordtype">int</span> * data);
+<a name="l00112"></a>00112 
+<a name="l00118"></a>00118 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a1de66d540cde162eb973be52105412e7" title="Sort of an array of integer with Insertion Sort algorithm.">SU_ISort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data_size,  <span class="keywordtype">int</span> * data);
+<a name="l00119"></a>00119 
+<a name="l00125"></a>00125 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a7e0d8766c2c7d0a35f5502d7614bbb26" title="Sort of an array of integer with Heap Sort algorithm.">SU_HSort</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data_size,  <span class="keywordtype">int</span> * data);
+<a name="l00126"></a>00126 
+<a name="l00130"></a>00130 <span class="keywordtype">void</span> <a class="code" href="system__utils_8c.html#a972e5787e077937c95a574fc06f38367" title="Test function. Juste print a message on stderr.">SU_test</a>();
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Mars 27 2016 17:07:30 pour Projet de système d'exploitation 2 : trions ensembles par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

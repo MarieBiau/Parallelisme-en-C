@@ -1,0 +1,12 @@
+===== Build the documentation =====
+
+In the root directory of the project, run the following command:
+ $ make doc
+
+===== Use the project =====
+
+To compile, run the following commande:
+ $ make
+ 
+To learn how to use the producted file (named "project"), run the following command:
+ $ ./bin/project -h

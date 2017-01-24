@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Projet de système d&#39;exploitation 2 : trions ensembles: Sujet : Tri externe et Fork</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Projet de système d&#39;exploitation 2 : trions ensembles
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li class="current"><a href="index.html"><span>Sujet</span></a></li>
+      <li><a href="globals.html"><span>Fonctions</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Sujet : Tri externe et Fork </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="seq_objectif"></a>
+Objectif du projet</h2>
+<p>Ce projet a pour but de vous faire étudier la parallélisation d'un algorithme dans un cas pratique. À l'aide de la commande Unix fork, vous devrez donc proposer et étudier plusieurs mises en oeuvre d'un [<b>tri</b> <b>externe</b>.](<a href="http://fr.wikipedia.org/wiki/Algorithme_de_tri#Tri_interne_et_externe">http://fr.wikipedia.org/wiki/Algorithme_de_tri#Tri_interne_et_externe</a>)</p>
+<h2><a class="anchor" id="seq_tri_ext"></a>
+Tri externe</h2>
+<p>Un tri externe est un algorithme qui utilise la mémoire de masse (le disque dur) pour stocker des résultats partiels de l'algorithme de tri (à l'opposé des tris internes qui n'utilisent que la mémoire centrale). En effet, la compléxité non linéaire des algorithmes de tri par comparaison empêche d'utiliser des algorithmes travaillant en flux (et qui ne surchargeraient pas la mémoire centrale). Si l'on souhaite minimiser l'empreinte en mémoire vive d'un algorithme de tri, une astuce consiste donc à utiliser une variante du tri fusion suivant ce principe : </p>
+<ul>
+<li>Découper les données en sous-ensembles de taille "raisonnable" qui seront stockés sur la mémoire de masse. Cette opération peut être réalisée sur le flux de données sans tout conserver en mémoire centrale. </li>
+<li>Trier ces sous-ensembles avec des algorithmes de tri "classiques" et sauvegarder chaque résultat dans la mémoire de masse. Cette opération nécessite de conserver "au pire" en mémoire centrale un nombre de données égal à la taille d'un sous-ensemble. </li>
+<li>Fusionner/Interclasser les sous-ensembles n à n et sauvegarder le résultat dans la mémoire de masse. Cette opération peut être réalisée en flux en ne conservant en mémoire vive que n+1 valeurs au minimum.</li>
+</ul>
+<p>Ce projet vise donc à étudier ce type d'algorithmes et en particulier leur parallélisation via l'utilisation de la primive Fork fournie par Unix.</p>
+<h2><a class="anchor" id="seq_eval"></a>
+Évaluation</h2>
+<p>Cette section décrit très succinctement le contenu attendu dans ce projet. <b> Cette section constitue une base de travail et ne se substitue pas aux consignes données en cours par votre enseignant. </b></p>
+<p>Pour ce projet, vous devrez mettre en avant et vous serez évalués sur vos capacités à : </p>
+<ul>
+<li>comprendre du code avancé fourni ; </li>
+<li>restituer les différents éléments pratiques et théoriques que vous avez vus en cours ; </li>
+<li>mettre en oeuvre ces éléments dans un code efficace, "propre" et documenté ; </li>
+<li>proposer et analyser des expérimentations ; </li>
+<li>être curieux face à des techniques et des sujets nouveaux.</li>
+</ul>
+<p>Deux rendus sont attendus à l'issu de ce projet : un rapport et le code source réalisé pour mener à bien les expériences.</p>
+<h3><a class="anchor" id="rapport"></a>
+Le rapport</h3>
+<h4><a class="anchor" id="consid"></a>
+Considérations générales</h4>
+<p>Sachez qu'une part non négligeable de votre note sera liée à la forme du rapport, au discours que vous y développerez et au respect des présentes consignes. Ces points sont plus importants que les résultats bruts que vous pourriez placer dans le rapport.</p>
+<p>Voici quelques points généraux que vous devez prendre en compte. Le non respect de ces consignes sera sanctionné. Les pénalités indiquées correspondent au nombre de points retirés de la note. Ce ne sont que des valeurs indicatives et elles ne sont pas exhaustives. </p>
+<ul>
+<li>(pénalité : note = 0 -- conseil de discipline) Votre rapport est un travail <b>personnel</b>. Tout partage d'éléments significatifs (sous forme de copier-coller) avec un autre étudiant sera fortement sanctionné (pour les deux étudiants concernés sans distinction). Il en sera de même quant à l'utilisation abusive de ressources externes (plagiat Internet ou d'ouvrages). </li>
+<li>(pénalité : -1 par "remplissage") Le rapport doit être présenté comme une <b>analyse</b> d'expériences. Avant d'inclure un élément dans votre rapport, demandez-vous systématiquement s'il aide le lecteur à <b>comprendre les mécanismes</b> que vous observez ou expliquez. En particulier, évitez les captures d'écrans inutiles (une page pour afficher une ligne de commande est sans intérêt). </li>
+<li>(pénalité : -1) Puisque vous allez décrire des expériences, il est nécessaire pour le lecteur d'avoir les informations pour éventuellement les reproduire. Pensez donc à préciser les outils et le matériel (type d'ordinateur, composants) utilisés pour vos expériences. </li>
+<li>(pénalité : -1) Un graphique sans titre ni légende ou échelle est illisible. Facilitez le travail de votre lecteur en incluant ces informations et en indiquant ce qu'il y a à comprendre sur le graphique (s'il n'y a rien, alors le graphique ne devrait pas être dans votre rapport). </li>
+<li>(pénalité : -2) Ce rapport n'est pas un journal. De façon générale, essayez de faire la part des choses entre les aspects techniques inintéressants ("j'ai tapé la commande ... puis la commande ... et ça marche") qui n'ont pas leur place dans ce rendu et les concepts et phénomènes observés pertinents ( la saturation de la mémoire au moyen de ... entraîne une ralentissement de ... Ceci peut être vérifié à l'aide de la commande ...").
+\li (pénalité : -4) Supposez que le lecteur de votre rapport n'a pas accès à ce sujet et ne le connaît pas. Les sections suivantes ne sont pas des questions et sont là pour vous guider dans les différents points à aborder et les sujets à traiter. Il sera jugé \b inadmissible que votre rapport comporte des passages tels que : "Pour la question 3.5 1, nous observons une augmentation du temps de calcul".
+\li (pénalité : -2) Respectez au maximum la langue française pour être compréhensible : relisez-vous et faîtes-vous relire ! De même, vous êtes de futurs ingénieurs donc utilisez un vocabulaire précis et technique : un programme ne "plante" pas et n'a pas de "bug" qui le font "crasher" et un ordinateur ne "rame" pas !</li>
+</ul>
+<h4><a class="anchor" id="struct_rendu"></a>
+Structure du rapport (pénalité : -5)</h4>
+<p>Le rapport devra être constitué d'approximativement 10 pages rédigées.</p>
+<p>En plus des points précédents, un rapport technique, comme tout document, doit s’articuler autour de trois parties : </p>
+<ul>
+<li>l’introduction qui présente le contexte, la problématique et le contenu du document ; </li>
+<li>le développement qui correspond au coeur du rapport. En particulier, vous prendrez soin d'expliquer les différents choix de mises en oeuvres et préciserez le fonctionnement de vos programmes. ; </li>
+<li>la conclusion qui synthétise le contenu du document et présente des perspectives ouvertes par les travaux présentés.</li>
+</ul>
+<p>En particulier, l'introduction doit présenter le contexte <b>technique</b> de votre rapport (et pas que vous êtes à l'ENSSAT et que vous êtes en projet de systèmes d'exploitation 2). Il faut ensuite définir la problématique de votre étude, le but recherché et enfin annoncer le plan du rapport qui doit être lié à la structure de votre discours.</p>
+<p>Quant à la conclusion, elle doit comporter une synthèse "globale" (c'est un pléonasme volontaire) du contenu du rapport et porter une analyse générale sur ce qui a été fait et observé. Elle doit se terminer en présentant des perspectives ouvertes par votre travail (impacts, points à confirmer, expériences complémentaires possibles, ...). Votre avis sur ce que vous avez appris à titre personnel, votre satisfaction ou insatisfaction personnelle à faire ce projet ou à suivre ce cours, vos difficultés d'organisation personnelle ("le chat a mangé mon ordinateur") ou toute autre considération sur l'âge du capitaine et le sens du vent sont superflus dans un rapport technique.</p>
+<h4><a class="anchor" id="forme_rendu"></a>
+Forme du rapport (pénalité : note/2)</h4>
+<p>La forme de votre rapport est importante. Comme indiqué précédemment, les règles de grammaire et de typographie de la langue dans laquelle est écrit le rapport doivent être respectées. Le texte doit être <b>justifié</b> (et non pas aligné à gauche). L’utilisation des outils LaTeX est un bon moyen d'assurer uniformité et respect de la typographie.</p>
+<p>Quels que soient les moyens utilisés pour produire votre document, vous devez fournir un rendu lisible sur un maximum de supports. Le fichier contenant votre rapport devra donc <b>obligatoirement</b> être au format PDF. Le rapport sera constitué d'un fichier au format <b>pdf</b> nommé sur le modèle suivant : </p>
+<div class="fragment"><pre class="fragment">
+ 	[nom]_[prenom]_[nom de l'encadrant de TP].pdf
+</pre></div><p> Malgré la présence de vos noms dans le nom du fichier, il est nécessaire de les inclure <b>aussi</b> dans la première page du rapport !</p>
+<h3><a class="anchor" id="seq_eval_code"></a>
+Le code source (pénalité : note/2)</h3>
+<p>L'<b>ensemble</b> du code utilisé devra être fourni au sein d'un unique fichier compressé et nommé sur le modèle suivant : </p>
+<div class="fragment"><pre class="fragment">
+ 	[nom]_[prenom]_[nom de l'encadrant de TP].zip
+</pre></div><p> Ce code devra être organisé, commenté et correctement indenté. La présence d'un fichier README décrivant comment utiliser vos sources est également souhaitée. Ces consignes sont primordiales et leur non respect impactera lourdement la notation finale.</p>
+<h3><a class="anchor" id="orga_rendu"></a>
+Organisation</h3>
+<p>Pour ce TP, vous disposerez au minimum de 4 heures encadrées. Mettez ces périodes à profit pour poser des questions à vos chargés de TP. Malgré cela, l'achèvement de ce travail n'est pas réalisable pendant le seul temps encadré. Vous devrez travailler en dehors des séances prévues pour ce TP.</p>
+<p>La date de rendu est fixée au dimanche 10 avril à 23h55 pour l'ensemble des groupes. Aucun retard ou report n'est possible et la non remise du rapport ou du code dans les temps entraînera la note de 0. Encore une fois, compte-tenu des délais et du temps encadré, aucune excuse organisationnelle ne sera acceptée et la remise d'un document bâclé sera traitée sans complaisance.</p>
+<p>Ce document ne constitue qu'un point de départ et le travail à réaliser <b>A</b> <b>MINIMA</b>.</p>
+<h2><a class="anchor" id="seq_dispo"></a>
+Materiel disponible</h2>
+<p>Afin de vous aider à faire cette étude, plusieurs outils sont mis à votre disposition : </p>
+<ul>
+<li>L'ensemble des fonctions nécessaires pour réaliser un tri externe. Elles sont fournies dans les fichiers <a class="el" href="system__utils_8h.html" title="Usefull function for the system project.">src/system_utils.h</a> ; <a class="el" href="system__utils_8c.html" title="Implementation of usefull function for the system project.">src/system_utils.c</a> et <a class="el" href="system__utils__etu_8c.html" title="Implementation by students of usefull function for the system project.">src/system_utils_etu.c</a>. Vous trouverez une documentation des fonctions utilisables dans l'onglet "Fonctions" de ce document. </li>
+<li>Un programme de démonstration mettant en oeuvre des fonctionnalités de base. Ce programme est détaillé plus précisément dans la section <a class="el" href="index.html#seq_demo">Utilisation de la démonstration</a>. </li>
+<li>Un fichier Makefile générique compilant la démonstration. </li>
+<li>Un fichier README vous expliquant comment compiler cette documentation. </li>
+<li>Cette documentation.</li>
+</ul>
+<h2><a class="anchor" id="seq_demo"></a>
+Utilisation de la démonstration</h2>
+<p>Pour compiler les sources, placez-vous dans le répertoire racine du projet et lancer la commande suivante : </p>
+<div class="fragment"><pre class="fragment">
+ 	  $ make
+</pre></div><p> En l'état, cette opération produit un unique fichier binaire disponible dans le sous-répertoire bin et nommé "project". L'usage de ce binaire est décrit par une aide accessible grâce à l'option -h. </p>
+<div class="fragment"><pre class="fragment">
+ 	  $ ./bin/project -h
+</pre></div><p> Si vous observez les sources du programme principal présentes dans le fichier project.c, vous constatez que le code présent dans la fonction "main" n'est utilisé que pour analyser les différentes options et lancer la fonction correspondante au mode choisi par l'utilisateur. L'analyse des options est assistée par l'utilisation de la bibliothèque [<b>getopt</b>.](<a href="http://en.wikipedia.org/wiki/Getopt">http://en.wikipedia.org/wiki/Getopt</a>) qu'il vous est recommandé d'utiliser également.</p>
+<p>La présente documentation peut être recompilée avec la commande suivante : </p>
+<div class="fragment"><pre class="fragment">
+ 	  $ make doc
+</pre></div><h3><a class="anchor" id="seq_gen"></a>
+Génération d'un fichier à trier</h3>
+<p>Le projet nécessite obligatoirement des données à trier. Les données sont constituées d'entiers positifs codés et sont placés dans des fichiers textes ne contenant qu'un seul entier en base décimal par ligne. La production d'un tel fichier rempli par des données aléatoires peut être réalisée par le programme de démonstration via le mode "generation". La commande suivante produit un fichier nommé /tmp/test.txt qui contiendra 50000000 entiers aléatoires. </p>
+<div class="fragment"><pre class="fragment">
+	  $ ./bin/project -m generation -o /tmp/test.txt -n 50000000
+</pre></div><h3><a class="anchor" id="seq_sort_int"></a>
+Tri interne</h3>
+<p>Le programme de démonstration propose un mode permettant de réaliser le tri interne d'un fichier. Voici un exemple d'appel réalisant le tri d'un fichier. </p>
+<div class="fragment"><pre class="fragment">
+	  $ ./bin/project -m demoSort -i /tmp/test.txt -o /tmp/test.sort.txt
+</pre></div><p>Vous pouvez comparer la sortie de ce programme avec la commande <b>sort</b> fournie par Unix : </p>
+<div class="fragment"><pre class="fragment">
+	  $ sort -g /tmp/test.txt &gt; /tmp/test.sort.txt
+</pre></div><h3><a class="anchor" id="seq_sort_ext"></a>
+Tri externe simple</h3>
+<p>Une première version de tri externe utilisant trois fichiers et les trois tris internes disponibles dans <a class="el" href="system__utils_8h.html" title="Usefull function for the system project.">system_utils.h</a> (quick sort, insertion sort ou heap sort) est proposée par le mode demoSortSplit. Il peut être utilisé comme suit : </p>
+<div class="fragment"><pre class="fragment">
+	  $ ./bin/project -m demoSortSplit -i /tmp/test.txt -o /tmp/test.sort.txt
+</pre></div><h3><a class="anchor" id="seq_sort_ext_gen"></a>
+Tri externe générique</h3>
+<p>Enfin, une version générique du tri externe est disponible dans le mode projectV0 qui devrait vous servir de point de départ pour vos travaux. Les sources spécifiques au code du mode projectV0 sont disponibles dans les fichiers <a class="el" href="project__v0_8h.html" title="V0 of the system project.">src/project_v0.h</a> et <a class="el" href="project__v0_8c.html" title="Implementation of the V0 of the system project.">src/project_v0.c</a>. </p>
+<div class="fragment"><pre class="fragment">
+	  $ ./bin/project -m projectV0 -i /tmp/test.txt -o /tmp/test.sort.txt -k 5
+</pre></div><h2><a class="anchor" id="seq_prem"></a>
+Travail préliminaire</h2>
+<p>Afin de vous familiariser avec le code fourni, vous devez réaliser d'abord les étapes décrites dans cette section. Il n'est pas nécessaire de faire figurer cette partie dans le rapport.</p>
+<h3><a class="anchor" id="seq_prep_espace_disque"></a>
+Considération sur l'espace disque</h3>
+<p>L'objectif de ce projet est de trier des fichier très volumineux. Sachant que l'espace disque sur votre partition personnelle est limité par des quotas, il est <b>impératif</b> que les fichiers générés dans votre projet soient sur le disque local de votre machine. Utilisez en particulier le répertoire /tmp/ .</p>
+<p>Vérifiez avant toute chose l'espace disponible sur cette partition avec la commande suivante : </p>
+<div class="fragment"><pre class="fragment">
+	  $ df -h /tmp
+</pre></div><p>Au cours de vos expériences, veillez bien à ne pas saturer cette partition. De plus, pensez à vider régulièrement, et en particulier à la fin d'une scéance de travail, le répertoire /tmp/ d'éventuels fichiers résiduels.</p>
+<h3><a class="anchor" id="seq_prep_test"></a>
+Tester la démonstration</h3>
+<p>La démonstration propose plusieurs fonctionnalités et utilise un code non trivial. Avant de coder vos versions du tri externe, prenez le temps d'analyser et d'essayer ce code. N'hésitez à poser des questions dessus pour avoir des éclaircissements.</p>
+<h2><a class="anchor" id="seq_todo"></a>
+Réalisation MINIMALE</h2>
+<p>Voici le travail <b>minimal</b> attendu dans le rendu :</p>
+<ul>
+<li>Il a été vu en cours que l'utilisation de la méthode <b>system</b> introduit des failles de sécurité. Proposez et mettez en oeuvre une nouvelle version de la méthode SU_removeFile n'utilisant pas system. </li>
+<li>À l'aide de la commande fork, réalisez un mode projectV1 qui fonctionne similairement à projectV0 mais qui parallélise le tri des différents sous-fichiers. </li>
+<li>À l'aide de la commande fork, proposez un mode projectV2 qui, en plus de ce qui a été réalisé dans projectV1, parallèlise la fusion des sous-fichiers en deux cascades au lieu d'une, comme dans projectV0 ou projectV1.</li>
+</ul>
+<p>Pour chaque nouvelle version du projet, vous exhiberez l'arbre des processus de votre programme (sur la sortie d'erreur stderr). Vous devrez proposer plusieurs expériences pour étudier les performances de votre implémentation en fonction des paramètres d'entrée. La mesure des performances peut être réalisée en préfixant vos commandes par la commande suivante : </p>
+<div class="fragment"><pre class="fragment">
+	 $ /usr/bin/time -v 
+</pre></div><h2><a class="anchor" id="seq_next"></a>
+Pour aller plus loin</h2>
+<p>Il est attendu que vous exploriez plus en avant ce problème. Voici quelques pistes intéressantes envisageables (mais non exhaustives) : </p>
+<ul>
+<li>Dans quelles circonstances le tri externe vous semble-t-il utile ? </li>
+<li>Proposez d'autres stratégies de fusion des sous-fichiers (arbre binaire ? file d'atttente ?). </li>
+<li>Mettez en oeuvre ces stratégies. </li>
+<li>Que se passerait-il si vous utilisiez un tri fusion uniquement (avec et sans fork) plutôt qu'un tri interne au-delà d'une certaine taille de sous-fichiers. Pourquoi ? Illustrez le. </li>
+<li>Quel est l'impact du nombre de sous-fichiers (et de leur taille) sur les performances ? </li>
+<li>Testez l'impact du tri interne utilisé (quick sort, insertion sort ou heap sort) sur les performances (en fonction de la taille des sous-fichiers ?). </li>
+<li>D'autres idées ? </li>
+</ul>
+</div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Mars 27 2016 17:07:30 pour Projet de système d'exploitation 2 : trions ensembles par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

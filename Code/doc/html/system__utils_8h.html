@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Projet de système d&#39;exploitation 2 : trions ensembles: Référence du fichier src/system_utils.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Projet de système d&#39;exploitation 2 : trions ensembles
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Sujet</span></a></li>
+      <li><a href="globals.html"><span>Fonctions</span></a></li>
+      <li><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier src/system_utils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Usefull function for the system project.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;sys/wait.h&gt;</code><br/>
+<code>#include &lt;fcntl.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;stdarg.h&gt;</code><br/>
+<code>#include &lt;err.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;sysexits.h&gt;</code><br/>
+<code>#include &lt;assert.h&gt;</code><br/>
+</div>
+<p><a href="system__utils_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a3a7d856af4c621514ac10a02646b2740">SU_getFileNbLine</a> (const char *file)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of line of a file.  <a href="#a3a7d856af4c621514ac10a02646b2740"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a2daa8a8daa212ac7b025044c4c5d6567">SU_splitFile</a> (const char *source_file, unsigned long nb_line_per_file, unsigned long nb_files, const char *source_file1,...)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a file in sub files.  <a href="#a2daa8a8daa212ac7b025044c4c5d6567"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a773e64d16aaffa7a8466308c0537bba0">SU_splitFile2</a> (const char *source_file, const unsigned long nb_line_per_file, const unsigned long nb_files, const char **file_names)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Split a file in sub files.  <a href="#a773e64d16aaffa7a8466308c0537bba0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a5cff693748ce864e7db51bc28e38982d">SU_loadFile</a> (const char *file, int **data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a file of integer (one per line).  <a href="#a5cff693748ce864e7db51bc28e38982d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a2929af5c8c7975dab2163c3c633c4656">SU_saveFile</a> (const char *file, unsigned long data_size, const int *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a file of integer (one per line).  <a href="#a2929af5c8c7975dab2163c3c633c4656"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a31b12abd418b33f929a1b85a20e1d375">SU_removeFile</a> (const char *file)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a file from filesystem.  <a href="#a31b12abd418b33f929a1b85a20e1d375"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a273efdb8e0af1dff499d05b8e302e01a">SU_randomGeneration</a> (const char *file_target, unsigned long nb_elems)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fill a file with nb_elems random integers  <a href="#a273efdb8e0af1dff499d05b8e302e01a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a411a08d168c62b858bfe9067a81b2913">SU_mergeSortedFiles</a> (const char *source_file1, const char *source_file2, const char *file_target)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge two sorted files of integers.  <a href="#a411a08d168c62b858bfe9067a81b2913"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a0f0a5dd981390dcdbfd62f697eeeda85">SU_QSort</a> (unsigned long data_size, int *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort of an array of integer with Quick Sort algorithm.  <a href="#a0f0a5dd981390dcdbfd62f697eeeda85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a1de66d540cde162eb973be52105412e7">SU_ISort</a> (unsigned long data_size, int *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort of an array of integer with Insertion Sort algorithm.  <a href="#a1de66d540cde162eb973be52105412e7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a7e0d8766c2c7d0a35f5502d7614bbb26">SU_HSort</a> (unsigned long data_size, int *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort of an array of integer with Heap Sort algorithm.  <a href="#a7e0d8766c2c7d0a35f5502d7614bbb26"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a972e5787e077937c95a574fc06f38367"></a><!-- doxytag: member="system_utils.h::SU_test" ref="a972e5787e077937c95a574fc06f38367" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="system__utils_8h.html#a972e5787e077937c95a574fc06f38367">SU_test</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test function. Juste print a message on stderr. <br/></td></tr>
+</table>
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Usefull function for the system project. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Namespace : all functions are prefixed by SU_ (for system_utils) </dd></dl>
+</div><hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a3a7d856af4c621514ac10a02646b2740"></a><!-- doxytag: member="system_utils.h::SU_getFileNbLine" ref="a3a7d856af4c621514ac10a02646b2740" args="(const char *file)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long <a class="el" href="system__utils_8h.html#a3a7d856af4c621514ac10a02646b2740">SU_getFileNbLine</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the number of line of a file. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Path to the file to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Number of line in the file. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The file is not fully loaded in memory. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7e0d8766c2c7d0a35f5502d7614bbb26"></a><!-- doxytag: member="system_utils.h::SU_HSort" ref="a7e0d8766c2c7d0a35f5502d7614bbb26" args="(unsigned long data_size, int *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a7e0d8766c2c7d0a35f5502d7614bbb26">SU_HSort</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sort of an array of integer with Heap Sort algorithm. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Number of element in the data array </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">data</td><td>Array of integer to sort. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a1de66d540cde162eb973be52105412e7"></a><!-- doxytag: member="system_utils.h::SU_ISort" ref="a1de66d540cde162eb973be52105412e7" args="(unsigned long data_size, int *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a1de66d540cde162eb973be52105412e7">SU_ISort</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sort of an array of integer with Insertion Sort algorithm. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Number of element in the data array </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">data</td><td>Array of integer to sort. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5cff693748ce864e7db51bc28e38982d"></a><!-- doxytag: member="system_utils.h::SU_loadFile" ref="a5cff693748ce864e7db51bc28e38982d" args="(const char *file, int **data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long <a class="el" href="system__utils_8h.html#a5cff693748ce864e7db51bc28e38982d">SU_loadFile</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int **&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Load a file of integer (one per line). </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File to load. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Pointer to the array that will received the datas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Number of data loaded. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>No allocation needs to be perform but data must be freed after. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a411a08d168c62b858bfe9067a81b2913"></a><!-- doxytag: member="system_utils.h::SU_mergeSortedFiles" ref="a411a08d168c62b858bfe9067a81b2913" args="(const char *source_file1, const char *source_file2, const char *file_target)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a411a08d168c62b858bfe9067a81b2913">SU_mergeSortedFiles</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source_file1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source_file2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Merge two sorted files of integers. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_file1</td><td>First sorted file. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_file2</td><td>Second sorted file. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_target</td><td>File that will received the datas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Do not load all data in memory. Work on streams. </dd></dl>
+<p>end_file_2 </p>
+
+</div>
+</div>
+<a class="anchor" id="a0f0a5dd981390dcdbfd62f697eeeda85"></a><!-- doxytag: member="system_utils.h::SU_QSort" ref="a0f0a5dd981390dcdbfd62f697eeeda85" args="(unsigned long data_size, int *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a0f0a5dd981390dcdbfd62f697eeeda85">SU_QSort</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sort of an array of integer with Quick Sort algorithm. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Number of element in the data array </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">data</td><td>Array of integer to sort. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Use a recursive, in place, version of quick sort. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a273efdb8e0af1dff499d05b8e302e01a"></a><!-- doxytag: member="system_utils.h::SU_randomGeneration" ref="a273efdb8e0af1dff499d05b8e302e01a" args="(const char *file_target, unsigned long nb_elems)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a273efdb8e0af1dff499d05b8e302e01a">SU_randomGeneration</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file_target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_elems</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>fill a file with nb_elems random integers </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_target</td><td>File that will received the datas. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_elems</td><td>Number of data to generate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a31b12abd418b33f929a1b85a20e1d375"></a><!-- doxytag: member="system_utils.h::SU_removeFile" ref="a31b12abd418b33f929a1b85a20e1d375" args="(const char *file)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils__etu_8c.html#a31b12abd418b33f929a1b85a20e1d375">SU_removeFile</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Remove a file from filesystem. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File that will be deleted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">A faire:</a></b></dt><dd>Must be change by students </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2929af5c8c7975dab2163c3c633c4656"></a><!-- doxytag: member="system_utils.h::SU_saveFile" ref="a2929af5c8c7975dab2163c3c633c4656" args="(const char *file, unsigned long data_size, const int *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a2929af5c8c7975dab2163c3c633c4656">SU_saveFile</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>data_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Load a file of integer (one per line). </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>File that will received the datas. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_size</td><td>Number of data to save. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Array of data to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2daa8a8daa212ac7b025044c4c5d6567"></a><!-- doxytag: member="system_utils.h::SU_splitFile" ref="a2daa8a8daa212ac7b025044c4c5d6567" args="(const char *source_file, unsigned long nb_line_per_file, unsigned long nb_files, const char *source_file1,...)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a2daa8a8daa212ac7b025044c4c5d6567">SU_splitFile</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_line_per_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>nb_files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source_file1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Split a file in sub files. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_file</td><td>Path to the file to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_line_per_file</td><td>Number of data to put in each subfile (the last file will contains all the remaining data). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_files</td><td>Number of file to create. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_file1</td><td>Name of the first subfile. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Name of the other subfiles. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a773e64d16aaffa7a8466308c0537bba0"></a><!-- doxytag: member="system_utils.h::SU_splitFile2" ref="a773e64d16aaffa7a8466308c0537bba0" args="(const char *source_file, const unsigned long nb_line_per_file, const unsigned long nb_files, const char **file_names)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="system__utils_8h.html#a773e64d16aaffa7a8466308c0537bba0">SU_splitFile2</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>source_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned long&#160;</td>
+          <td class="paramname"><em>nb_line_per_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned long&#160;</td>
+          <td class="paramname"><em>nb_files</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>file_names</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Split a file in sub files. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">source_file</td><td>Path to the file to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_line_per_file</td><td>Number of data to put in each subfile (the last file will contains all the remaining data). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nb_files</td><td>Number of file to create. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_names</td><td>Array containing the subfiles names. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Mars 27 2016 17:07:30 pour Projet de système d'exploitation 2 : trions ensembles par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
